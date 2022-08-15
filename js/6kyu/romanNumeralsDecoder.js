@@ -15,3 +15,38 @@
 // C          100
 // D          500
 // M          1,000
+
+const conversion = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000,
+};
+
+const solution = (roman) => {
+  let value = 0;
+  roman = roman.toUpperCase();
+
+  for (let i = 0; i < roman.length; i++) {
+    if (conversion[roman[i]] < conversion[roman[i + 1]]) {
+      value -= conversion[roman[i]];
+    } else value += conversion[roman[i]];
+  }
+
+  return value;
+};
+solution('MCMXC');
+
+//  Step One: Convert from roman numerals to integers
+//  Step Two: Set rules for when to add and subtract
+//  Step Three: Return a total
+
+//  Other Solutions
+// function solution(roman){
+//   var conversion = {M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1};
+
+//   return roman.match(/CM|CD|XC|XL|IX|IV|\w/g).reduce((accum, roman) => accum + conversion[roman], 0);
+// }
