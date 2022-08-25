@@ -12,4 +12,18 @@
 // "    Hello     World   "                  =>  "#HelloWorld"
 // ""                                        =>  false
 
-function generateHashtag(str) {}
+const generateHashtag = (str) => {
+  str = str.split(' ').map((item) => {
+    if (item) {
+      item[0] = item[0].toUpperCase();
+      console.log(item);
+    }
+  });
+
+  str.unshift('#');
+  return str.join('');
+};
+
+// generateHashtag(" Hello there thanks for trying my Kata")
+console.log(generateHashtag(' Hello there thanks for trying my Kata'));
+// console.log(generateHashtag('     Hello     World   '));
