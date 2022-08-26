@@ -13,17 +13,26 @@
 // ""                                        =>  false
 
 const generateHashtag = (str) => {
+  if (!str || str === ' ') {
+    return false;
+  }
+  let string = [];
   str = str.split(' ').map((item) => {
     if (item) {
-      item[0] = item[0].toUpperCase();
+      item = item.charAt(0).toUpperCase() + item.slice(1);
+      string.push(item);
       console.log(item);
     }
   });
+  string.unshift('#');
+  string = string.join('');
 
-  str.unshift('#');
-  return str.join('');
+  if (string.length > 140) {
+    return false;
+  }
+  return string;
 };
 
 // generateHashtag(" Hello there thanks for trying my Kata")
 console.log(generateHashtag(' Hello there thanks for trying my Kata'));
-// console.log(generateHashtag('     Hello     World   '));
+console.log(generateHashtag(' '));
