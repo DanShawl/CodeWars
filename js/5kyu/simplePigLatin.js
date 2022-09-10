@@ -36,3 +36,7 @@ console.log(pigIt('Hello world .'));
 // function pigIt(str){
 //   return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
 // }
+
+// function findUniq(arr) {
+//   return +arr.filter( (value) => { return arr.indexOf(value) == arr.lastIndexOf(value) } );
+// }
