@@ -18,6 +18,7 @@ const uniqueInOrder = function (iterable) {
 };
 
 const uio = (iterable) => {
+  console.log(...iterable);
   return [...iterable].filter((letter, i) => letter != iterable[i - 1]);
 };
 
@@ -28,5 +29,5 @@ const uio = (iterable) => {
 
 // const uniqueInOrder = d => [...d].filter((x, i, a) => x != a[i + 1])
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
 console.log(uio('AAAABBBCCDAABBB'));
