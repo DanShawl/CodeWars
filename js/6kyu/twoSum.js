@@ -2,6 +2,19 @@
 
 // twoSum([1, 2, 3], 4) // returns [0, 2] or [2, 0]
 
+const twoSum = (array, goal) => {
+  let numberMap = new Map();
+
+  for (let index = 0; index < array.length; index++) {
+    el = array[index];
+
+    if (numberMap.has(goal - el)) return [index, numberMap.get(goal - el)];
+    else numberMap.set(el, index);
+  }
+
+  return [];
+};
+
 const tSum = (numbers, target) => {
   //  compare sums of each digit
   //  add one item with each
@@ -15,13 +28,13 @@ const tSum = (numbers, target) => {
 console.log(tSum([1, 2, 3], 4));
 console.log(tSum([1, 2, 3, 12, 4, 5, 6], 8));
 
-const twoSum = (numbers, target) => {
-  for (let i = 0; i < numbers.length; i++) {
-    for (let j = 1; j < numbers.length; j++) {
-      if (numbers[i] + numbers[j] === target) return [i, j];
-    }
-  }
-};
+// const twoSum = (numbers, target) => {
+//   for (let i = 0; i < numbers.length; i++) {
+//     for (let j = 1; j < numbers.length; j++) {
+//       if (numbers[i] + numbers[j] === target) return [i, j];
+//     }
+//   }
+// };
 
 // function twoSum(numbers, target) {
 //   for (let i = 0; i < numbers.length; i++) {
