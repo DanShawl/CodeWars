@@ -5,3 +5,9 @@ function filter_list(l) {
 }
 
 filter_list([1, 2, 'a', 'b']);
+
+//  Other solutions
+
+// function filter_list(l) {
+//   return l.filter(v => typeof v == "number")
+//  }
