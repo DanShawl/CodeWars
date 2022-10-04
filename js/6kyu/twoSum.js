@@ -11,7 +11,6 @@ const twoSum = (array, goal) => {
     if (numberMap.has(goal - el)) return [index, numberMap.get(goal - el)];
     else numberMap.set(el, index);
   }
-
   return [];
 };
 
