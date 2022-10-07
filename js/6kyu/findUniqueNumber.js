@@ -14,16 +14,16 @@
 //   }
 // }
 
-console.log(findUniq([1, 1, 1, 2, 1, 1]));
+console.log(findUniq([1, 1, 1, 3, 1, 1]));
 
 // console.log(findUniq([2, 1, 1, 1, 1, 1]));
 // console.log(findUniq([0, 0, 0.55, 0, 0]));
 
 //  Other Solutions
-function findUniq(arr) {
-  arr.sort((a, b) => a - b);
-  return arr[0] == arr[1] ? arr.pop() : arr[0];
-}
+// function findUniq(arr) {
+//   arr.sort((a, b) => a - b);
+//   return arr[0] == arr[1] ? arr.pop() : arr[0];
+// }
 
 // function findUniq(arr) {
 //   return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
