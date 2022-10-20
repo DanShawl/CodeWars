@@ -13,6 +13,4 @@
 // "1111"      -->  ""                # no characters to repeat
 // ""          -->  ""                # empty string
 
-function stringExpansion(s) {
-  // Good luck!
-}
+function stringExpansion(s) {}
