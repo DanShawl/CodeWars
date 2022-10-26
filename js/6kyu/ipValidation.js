@@ -21,14 +21,19 @@ function isValidIP(str) {
   str = str.split('.');
   if (str.length !== 4) return false;
   for (let i = 0; i < str.length; i++) {
-    console.log(str[i]);
-    if (str[i].startsWith('0')) return false;
+    if (isNaN(str[i])) return false;
+    if (str[i].startsWith('0') && str[i].length !== 1) return false;
     if (Number(str[i]) < 0 || Number(str[i]) > 255) return false;
   }
   return true;
 }
 
-console.log(isValidIP('023.455.67.89'));
+// console.log(isValidIP('23.455.67.89'));
+// console.log(isValidIP('01.02.03.04'));
+// console.log(isValidIP(''));
+// console.log(isValidIP('abc.def.ghi.jkl'));
+console.log(isValidIP('1e0.1e1.1e2.2e2'));
+// console.log(Number('abc'));
 
 // str.forEach((octet) => {
 //   if (Number(octet) < 0 || Number(octet) > 255) return false;
