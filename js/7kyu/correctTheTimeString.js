@@ -11,5 +11,36 @@
 // If the input-string is null or empty return exactly this value! (empty string for C++) If the time-string-format is invalid, return null. (empty string for C++)
 
 function timeCorrect(timestring) {
-  return '?';
+  if (timestring === null || timestring.length === 0) return timestring;
+  timestring = timestring.split(':');
+  let [hours, minutes, seconds] = timestring;
+  hours = Number(hours);
+  minutes = Number(minutes);
+  seconds = Number(seconds);
+
+  if (seconds > 60) {
+    timestring[2] = `${seconds - 60}`;
+    minutes += 1;
+  } else {
+    timestring[2] = `${seconds}`;
+  }
+
+  if (minutes > 60) {
+    timestring[1] = `${minutes - 60}`;
+    hours += 1;
+  } else {
+    timestring[1] = `${minutes}`;
+  }
+
+  if (hours > 24) {
+    timestring[0] = `${hours - 24}`;
+  } else {
+    timestring[0] = `${hours}`;
+  }
+
+  return timestring;
 }
+
+// console.log(timeCorrect('25:70:75'));
+// console.log(timeCorrect('19:99:99'));
+console.log(timeCorrect('24:01:01'));
