@@ -19,28 +19,29 @@ function timeCorrect(timestring) {
   seconds = Number(seconds);
 
   if (seconds > 60) {
-    timestring[2] = `${seconds - 60}`;
+    timestring[2] = `${seconds < 10 ? '0' : ''}${seconds - 60}`;
     minutes += 1;
   } else {
-    timestring[2] = `${seconds}`;
+    timestring[2] = `${seconds < 10 ? '0' : ''}${seconds}`;
   }
 
   if (minutes > 60) {
-    timestring[1] = `${minutes - 60}`;
+    timestring[1] = `${minutes < 10 ? '0' : ''}${minutes - 60}`;
     hours += 1;
   } else {
-    timestring[1] = `${minutes}`;
+    timestring[1] = `${minutes < 10 ? '0' : ''}${minutes}`;
   }
 
   if (hours > 24) {
-    timestring[0] = `${hours - 24}`;
+    timestring[0] = `${hours < 10 ? '0' : ''}${hours - 24}`;
   } else {
-    timestring[0] = `${hours}`;
+    timestring[0] = `${hours < 10 ? '0' : ''}${hours}`;
   }
 
   return timestring;
 }
 
-// console.log(timeCorrect('25:70:75'));
-// console.log(timeCorrect('19:99:99'));
+console.log(timeCorrect('25:70:75'));
+console.log(timeCorrect('19:99:99'));
+console.log(timeCorrect('09:10:01'));
 console.log(timeCorrect('24:01:01'));
